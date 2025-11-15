@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>world.com - Чат</title>
+  <link rel="stylesheet" href="1.css">
+</head>
+<body>
+
+  <div class="login-screen" id="loginScreen">
+    <div class="r">
+      <h2>добро пожаловать на чат world.com</h2>
+      <form onsubmit="enterChat(event)">
+        <input type="text" id="nickname" placeholder="ник" required>
+        <button type="submit">Войти в чат</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="chat-screen" id="chatScreen">
+    <div class="chat-header">
+      <h3>Космический чат</h3>
+      <div class="user-info">
+        <span id="currentUser">Ник: Гость</span>
+        <button onclick="changeNick()">Сменить ник</button>
+      </div>
+    </div>
+
+    <div class="messages" id="messages">
+      <p><b>Система:</b> добро пожаловать на чат world.com</p>
+    </div>
+
+    <div class="input-area">
+      <input type="text" id="messageInput" placeholder="Введите сообщение"
+             onkeydown="if(event.key==='Enter') sendMessage()">
+      <button onclick="sendMessage()">Отправить</button>
+    </div>
+  </div>
+
+  <script src="world.js"></script>
+</body>
+</html>
